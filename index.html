@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Shop</title>
+    <!-- -----Tailwind stylesheet-------- -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
@@ -29,6 +30,7 @@
                             Magic
                             Keybord US English</p>
                     </div>
+                    <!-- ---------------------------------Buttons-------------------------------------- -->
                     <div class="space-x-4 space-y-2 mt-8">
                         <h3 class="text-xl font-bold ml-4">Memory</h3>
                         <button id="base-memory" class="border-2 rounded-md p-2">8GB unifield memory</button>
@@ -46,14 +48,15 @@
                         <h3 class="text-xl font-bold ml-4">Choose your delivery option</h3>
                         <button id="defult-delivery-cost" class="border-2 rounded-md p-2">Friday, Aug 25 FREE Prime
                             Delivery</button>
-                        <button id="delivery-cost" class="border-2 rounded-md p-2">Friday, Aug 21 Delivery charge
+                        <button id="delivery-paid" class="border-2 rounded-md p-2">Friday, Aug 21 Delivery charge
                             $20</button>
 
                     </div>
                 </div>
+                <!-- ----------------------------------Table of all prices------------------------------------ -->
                 <div>
                     <table class=" table-auto m-8">
-                        <tbody class="font-medium">
+                        <tbody class="font-medium text-2xl">
                             <tr>
                                 <td>Best Price</td>
                                 <td>$ <span id="best-price">1299</span> </td>
@@ -79,7 +82,7 @@
                         </tbody>
 
                     </table>
-
+                    <!-- -------------------------------------Promo code------------------------------------ -->
                     <div class="mb-4">
                         <h3 class="text-xl font-bold ml-4">Add Promo code</h3>
                         <input id="promo-input" class="border ml-4" type="text">
@@ -91,9 +94,9 @@
 
         </section>
 
-
+        <!-- ------------------------------------Grand Total of the product--------------------------- -->
         <div class="flex justify-center">
-            <table class="table-auto m-8">
+            <table class="table-auto m-8 border-t-4">
                 <tbody class="font-medium text-3xl">
                     <tr>
                         <td>Total :</td>

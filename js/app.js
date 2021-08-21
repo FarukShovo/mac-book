@@ -1,3 +1,4 @@
+/* ---------------------------------------Function of getting elements-------------------------------- */
 function getTotalPrice() {
     const totalPrice = document.getElementById('total-price');
     const totalPriceText = totalPrice.innerText;
@@ -5,13 +6,14 @@ function getTotalPrice() {
     return totalPriceAmount;
 
 }
+/* ---------------------------------------Function of getting elements-------------------------------- */
 function getGrandTotal() {
     const grandTotal = document.getElementById('grand-total');
     const grandTotalText = grandTotal.innerText;
     const grandTotalAmount = parseFloat(grandTotalText);
     return grandTotalAmount;
 }
-
+/* ---------------------------------------Function of Calculation-------------------------------- */
 function calculateTotalPrice() {
     const bestPrice = parseFloat(document.getElementById('best-price').innerText);
     const extraMemoryCost = parseFloat(document.getElementById('extra-memory-cost').innerText);
@@ -26,19 +28,16 @@ function calculateGrandTotal() {
     const totalPrice = parseFloat(document.getElementById('total-price').innerText);
     document.getElementById('grand-total').innerText = totalPrice;
 }
-
+/* ---------------------------------------Memory button------------------------------------------------ */
 document.getElementById('base-memory').addEventListener('click', function () {
     const memoryCost = document.getElementById('extra-memory-cost');
     const memoryCostText = memoryCost.innerText;
     const memoryCostAmount = 0;
     memoryCost.innerText = memoryCostAmount;
     calculateTotalPrice();
-    // const totalPrice = document.getElementById('total-price');
-    // const totalPriceText = totalPrice.innerText;
-    // const totalPriceAmount = parseFloat(totalPriceText);
-    // totalPrice.innerText = totalPriceAmount + memoryCostAmount;
 
 })
+/* ---------------------------------------Extra Memory button------------------------------------------------ */
 //16GB unifield memory
 document.getElementById('16gb-extra').addEventListener('click', function () {
 
@@ -47,29 +46,14 @@ document.getElementById('16gb-extra').addEventListener('click', function () {
     const memoryCostAmount = 180;
     memoryCost.innerText = memoryCostAmount;
     calculateTotalPrice();
-    //calculate grand total price
-    /* const grandTotal = document.getElementById('grand-total');
-    const grandTotalText = grandTotal.innerText;
-    const grandTotalAmount = parseFloat(grandTotalText); */
-    //calculate total price
 
-    /*  const totalPrice = document.getElementById('total-price');
-     const totalPriceText = totalPrice.innerText;
-     const totalPriceAmount = parseFloat(totalPriceText); */
-    // const totalPrice = document.getElementById('total-price');
-    // const grandTotal = document.getElementById('grand-total');
-
-    //const totalPriceAmount = getTotalPrice();
-    // totalPrice.innerText = memoryCostAmount + totalPriceAmount;
-    //const grandTotalAmount = getGrandTotal();
-    // grandTotal.innerText = grandTotalAmount + memoryCostAmount
 
 
 
 })
 
-// for 256 GB SSD Storage
 
+/* --------------------------------------- for 256 GB SSD Storage button----------------------------------- */
 document.getElementById('base-storage').addEventListener('click', function () {
     const baseStorageCost = 0;
     const storageCost = document.getElementById('extra-storage-cost');
@@ -81,7 +65,8 @@ document.getElementById('base-storage').addEventListener('click', function () {
 
 })
 
-//for 512 GB extra storage
+
+/* --------------------------------------- for 512 GB SSD Storage button----------------------------------- */
 
 document.getElementById('extra-512gb').addEventListener('click', function () {
     const extra512gbStorageCost = 100;
@@ -94,7 +79,7 @@ document.getElementById('extra-512gb').addEventListener('click', function () {
 
 })
 
-//for 1TB extra storage
+/* --------------------------------------- for 1TB SSD Storage button----------------------------------- */
 document.getElementById('extra-1tb').addEventListener('click', function () {
     const extra1tbStorageCost = 180;
     const storageCost = document.getElementById('extra-storage-cost');
@@ -105,7 +90,8 @@ document.getElementById('extra-1tb').addEventListener('click', function () {
 
 })
 
-//delivery cost free
+
+/* --------------------------------------- for free delivery cost button----------------------------------- */
 
 document.getElementById('defult-delivery-cost').addEventListener('click', function () {
 
@@ -114,11 +100,12 @@ document.getElementById('defult-delivery-cost').addEventListener('click', functi
     const deliveryCostText = deliveryCost.innerText;
     const deliveryCostAmount = parseFloat(deliveryCostText);
     deliveryCost.innerText = freeDelivery;
+    calculateTotalPrice();
 })
 
-//with delivery cost 
+/* --------------------------------------- for paid delivery cost button----------------------------------- */
 
-document.getElementById('delivery-cost').addEventListener('click', function () {
+document.getElementById('delivery-paid').addEventListener('click', function () {
 
     const deliveryCharge = 20;
     const deliveryCost = document.getElementById('delivary-charge');
@@ -129,8 +116,8 @@ document.getElementById('delivery-cost').addEventListener('click', function () {
     calculateTotalPrice();
 
 })
-
-//calculate grand total price after getting promo code
+/* --------------------------- calculate grand total price after getting promo code------------------------- */
+//
 document.getElementById('apply-btn').addEventListener('click', function () {
     const promoInput = document.getElementById('promo-input');
     const totalPrice = document.getElementById('total-price');
