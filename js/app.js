@@ -1,17 +1,6 @@
 console.log('Bismillahir rahmanir Rahim');
-/* document.getElementById('apply-btn').addEventListener('click', function () {
-    const promoInput = document.getElementById('promo-input');
-    const grandTotal = document.getElementById('grand-total');
-    let grandTotalText = grandTotal.innerText;
-    let grandTotalAmount = parseFloat(grandTotalText);
-    console.log(grandTotalText);
-    if (promoInput.value == 'stevekaku') {
 
-        grandTotalAmount = grandTotalAmount * 0.2;
-    }
-    console.log(promoInput.value);
-    promoInput.value = '';
-}) */
+
 
 document.getElementById('base-memory').addEventListener('click', function () {
     const memoryCost = document.getElementById('extra-memory-cost');
@@ -58,6 +47,8 @@ document.getElementById('base-storage').addEventListener('click', function () {
     const totalPrice = document.getElementById('total-price');
     const totalPriceText = totalPrice.innerText;
     const totalPriceAmount = parseFloat(totalPriceText);
+
+
     totalPrice.innerText = totalPriceAmount + baseStorageCost;
 })
 
@@ -73,6 +64,13 @@ document.getElementById('extra-512gb').addEventListener('click', function () {
     const totalPrice = document.getElementById('total-price');
     const totalPriceText = totalPrice.innerText;
     const totalPriceAmount = parseFloat(totalPriceText);
+
+    //grand total
+    const grandTotal = document.getElementById('grand-total');
+    const grandTotalText = grandTotal.innerText;
+    const grandTotalAmount = parseFloat(grandTotalText);
+    grandTotal.innerText = grandTotalAmount + extra512gbStorageCost;
+
     totalPrice.innerText = totalPriceAmount + extra512gbStorageCost;
 })
 
@@ -87,11 +85,64 @@ document.getElementById('extra-1tb').addEventListener('click', function () {
     const totalPrice = document.getElementById('total-price');
     const totalPriceText = totalPrice.innerText;
     const totalPriceAmount = parseFloat(totalPriceText);
+
+    //grand total
+    const grandTotal = document.getElementById('grand-total');
+    const grandTotalText = grandTotal.innerText;
+    const grandTotalAmount = parseFloat(grandTotalText);
+    grandTotal.innerText = grandTotalAmount + extra1tbStorageCost;
     totalPrice.innerText = totalPriceAmount + extra1tbStorageCost;
 })
 
-//delivery cost
+//delivery cost free
 
-document.getElementById('defult-delivery').addEventListener('click', function () {
-    console.log('voss delivery paisi see you not for mind')
+document.getElementById('defult-delivery-cost').addEventListener('click', function () {
+    //console.log('voss delivery paisi see you not for mind')
+    const freeDelivery = 0;
+    const deliveryCost = document.getElementById('delivary-charge');
+    const deliveryCostText = deliveryCost.innerText;
+    const deliveryCostAmount = parseFloat(deliveryCostText);
+    deliveryCost.innerText = freeDelivery;
+})
+
+//with delivery cost 
+
+document.getElementById('delivery-cost').addEventListener('click', function () {
+    //console.log('voss delivery paisi see you not for mind')
+    const deliveryCharge = 20;
+    const deliveryCost = document.getElementById('delivary-charge');
+    const deliveryCostText = deliveryCost.innerText;
+    const deliveryCostAmount = parseFloat(deliveryCostText);
+    deliveryCost.innerText = deliveryCharge;
+
+    const totalPrice = document.getElementById('total-price');
+    const totalPriceText = totalPrice.innerText;
+    const totalPriceAmount = parseFloat(totalPriceText);
+
+    //grand total
+    const grandTotal = document.getElementById('grand-total');
+    const grandTotalText = grandTotal.innerText;
+    const grandTotalAmount = parseFloat(grandTotalText);
+    grandTotal.innerText = grandTotalAmount + deliveryCharge;
+
+    totalPrice.innerText = totalPriceAmount + deliveryCharge;
+})
+
+document.getElementById('apply-btn').addEventListener('click', function () {
+    const promoInput = document.getElementById('promo-input');
+    const totalPrice = document.getElementById('total-price');
+    const grandTotal = document.getElementById('grand-total');
+    const grandTotalText = grandTotal.innerText;
+
+    let totalPriceText = totalPrice.innerText;
+    let totalPriceAmount = parseFloat(totalPriceText);
+
+    if (promoInput.value == 'stevekaku') {
+
+        const discountTotalAmount = totalPriceAmount * 0.2;
+        const totalAmount = totalPriceAmount - discountTotalAmount;
+        grandTotal.innerText = totalAmount;
+    }
+
+    promoInput.value = '';
 })
